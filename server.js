@@ -3,12 +3,20 @@
  * Initialise Express
  */
 const express = require('express');
+var cors = require('cors');
 const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
+
+var corsOptions = {
+  origin: 'https://console.signalfinlab.com/',
+  // 이 설정은 https://sub.example.app 인 origin을 허용합니다.
+  // 어플리케이션 구성에 맞게 origin 규칙을 적용해주세요.
+  optionsSuccessStatus: 200,
+};
 
 /*
  * Initialise Pusher
@@ -25,7 +33,7 @@ const pusher = new Pusher({
 /*
  * Define post route for creating new reviews
  */
-app.post('/release-alarm', (req, res) => {
+app.post('/release-alarm', cors(corsOptions), (req, res) => {
   pusher.trigger('my-channel', 'my-event', { alarm: req.body });
   res.status(200).send();
 });
@@ -33,7 +41,7 @@ app.post('/release-alarm', (req, res) => {
 /*
  * Run app
  */
-const port = 5000;
+const port = 3001;
 app.listen(port, () => {
   console.log(`App listening on port ${port}!`);
 });
