@@ -1,4 +1,4 @@
-const Pusher = require('pusher');
+import Pusher from 'pusher-js';
 
 const pusher = new Pusher({
   appId: '1624709',
