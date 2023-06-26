@@ -28,7 +28,7 @@ const pusher = new Pusher({
  * Define post route for creating new reviews
  */
 app.post('/release-alarm', (req, res) => {
-  pusher.trigger('my-channel', 'my-event', { alarm: req.body });
+  pusher.trigger('my-channel', 'my-event', req.body);
   res.status(200).send();
 });
 
