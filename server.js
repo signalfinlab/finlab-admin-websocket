@@ -12,7 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 
 var corsOptions = {
-  origin: 'https://console.signalfinlab.com/',
+  origin: 'http://localhost:3001/',
   // 이 설정은 https://sub.example.app 인 origin을 허용합니다.
   // 어플리케이션 구성에 맞게 origin 규칙을 적용해주세요.
   optionsSuccessStatus: 200,
