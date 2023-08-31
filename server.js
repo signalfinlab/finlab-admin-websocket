@@ -32,6 +32,11 @@ app.post('/release-alarm', (req, res) => {
   res.status(200).send();
 });
 
+app.post('/release-alarm-manager-web', (req, res) => {
+  pusher.trigger('managerWeb-channel', 'managerWeb-event', req.body);
+  res.status(200).send();
+});
+
 /*
  * Run app
  */
