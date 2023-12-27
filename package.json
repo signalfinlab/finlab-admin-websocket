@@ -2,8 +2,27 @@
   "dependencies": {
     "body-parser": "^1.20.2",
     "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "pusher": "^5.1.3",
     "pusher-js": "^8.2.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "finlab-admin-websocket",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/signalfinlab/finlab-admin-websocket.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/signalfinlab/finlab-admin-websocket/issues"
+  },
+  "homepage": "https://github.com/signalfinlab/finlab-admin-websocket#readme"
 }

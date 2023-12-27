@@ -7,6 +7,7 @@ var cors = require('cors');
 const path = require('path');
 const app = express();
 const bodyParser = require('body-parser');
+require('dotenv').config();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
@@ -18,8 +19,8 @@ app.use(cors());
 const Pusher = require('pusher');
 const pusher = new Pusher({
   appId: '1624709',
-  key: 'a6ef665a2ac6b4aaf716',
-  secret: 'e329e25488bc234a1c0c',
+  key: process.env.PUSHER_KEY,
+  secret: process.env.PUSHER_SECRET,
   cluster: 'ap3',
   useTLS: true,
 });

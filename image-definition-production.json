@@ -1,0 +1,6 @@
+[
+  {
+    "name": "finlab-admin-websocket",
+    "imageUri": "121665965379.dkr.ecr.ap-northeast-2.amazonaws.com/finlab-admin-websocket:latest-arm64"
+  }
+]
