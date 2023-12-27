@@ -7,10 +7,10 @@ WORKDIR /app
 COPY ./ ./
 
 # build
-RUN yarn install
-RUN yarn build
+RUN npm install
+RUN npm run build
 
 EXPOSE 3001
 
 # start command
-CMD [ "yarn", "start" ]
+CMD [ "npm", "run", "start" ]
